@@ -28,4 +28,17 @@ client.on("message", async message => {
 
 });
 
+client.on('guildMemberAdd', async member => {
+  if (member.guild.id === '476498757706579968') {
+    client.channels.get('476506316794494988').send("New member: **" + member.user.username + "**");
+    member.addRole('476705670528237589');
+  }
+});
+
+client.on('guildMemberRemove', async member => {
+  if (member.guild.id === '476498757706579968') {
+    client.channels.get('476506366643535913').send("Bye member: **" + member.user.username + "**");
+  }z
+});
+
 client.login(process.env.TOKEN);

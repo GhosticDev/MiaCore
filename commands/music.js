@@ -34,18 +34,7 @@ exports.run = async (client, message, args) => {
 
       let dispatcher = await connection.playStream(ytdl(args[1], { filter: 'audioonly' }));
 
-      const music = require("../music.js");
-      music.setInfo(info);
-
       return message.channel.send(`Now playing: ${info.title}`);
-
-    }
-    if (args[0] === "nowplaying") {
-      const music = require("../music.js");
-
-      let name = music.getInfo().title;
-
-      return message.channel.send(`Now playing: ${name}`);
 
     }
     if (args[0] === "leave") {

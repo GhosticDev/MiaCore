@@ -1,11 +1,9 @@
 const ytdl = require('ytdl-core');
 const Discord = require('discord.js');
-const db = require('quick.db');
 
 exports.run = async (client, message, args, ops) => {
   
-  let prefix = await db.fetch(`guild_${message.guild.id}_prefix`);
-  if (prefix === null) prefix = "md!";
+  let prefix = "mc!";
   
   console.log(1);
   if (!message.member.voiceChannel) return message.channel.send(

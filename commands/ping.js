@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, ops) => {
   const m = await message.channel.send("Calculating...");
 
   let ping = m.createdTimestamp - message.createdTimestamp;

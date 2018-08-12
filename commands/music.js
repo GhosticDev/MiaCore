@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, ops) => {
 
   if (args.length === 0) {
     message.channel.send("Use: `m!music play <link>`");

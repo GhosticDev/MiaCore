@@ -1,9 +1,12 @@
+/* global Map */
 const Discord = require('discord.js');
 const config = require("./config.json");
 const utils = require("./utils.js");
 
 const client = new Discord.Client();
 client.prefix = config.prefix;
+
+const active = new Map();
 
 client.on("ready", () => {
 	console.log("Bot on with " + client.users.size + " users and " + client.guilds.size + " servers!");
